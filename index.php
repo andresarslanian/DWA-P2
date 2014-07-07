@@ -227,11 +227,12 @@
 <script type="text/javascript" src="./bootstrap/js/bootstrap.min.js"></script>
 <script>
 	$(document).ready(function() {
-		var location = '<?php echo $_POST["first_time"]?>'; 
+		
+		var location = "<?php echo isset($_POST['first_time']) ? $_POST['first_time'] : '';?>"; 
 		if (location){
 			$('html, body').animate({
 				scrollTop: $("#generate").offset().top
-			}, 10);
+			}, 0);
 		} else {
 			$('html, body').animate({
 				scrollTop: $("#home").offset().top
